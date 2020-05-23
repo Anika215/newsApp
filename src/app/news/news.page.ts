@@ -22,7 +22,7 @@ export class NewsPage implements OnInit {
 
   onGoToNewsSinglePage(article) {
     this.newsService.currentArticle = article;
-    console.log("clicked!");
+    console.log("clicked!" + article);
     //this.router.navigate(["/news-single"]);
   }
 
