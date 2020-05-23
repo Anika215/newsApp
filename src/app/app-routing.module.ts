@@ -17,6 +17,10 @@ const routes: Routes = [
     loadChildren: () =>
       import("./news/news.module").then((m) => m.NewsPageModule),
   },
+  {
+    path: 'news-full-page',
+    loadChildren: () => import('./news-full-page/news-full-page.module').then( m => m.NewsFullPagePageModule)
+  },
 ];
 
 @NgModule({
