@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { NewsService } from "../news.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-news",
@@ -9,7 +10,7 @@ import { NewsService } from "../news.service";
 export class NewsPage implements OnInit {
   data: any;
   page = 1;
-  constructor(private newsService: NewsService) {}
+  constructor(private newsService: NewsService, private router: Router) {}
 
   ngOnInit() {
     this.newsService
@@ -23,7 +24,7 @@ export class NewsPage implements OnInit {
   onGoToNewsSinglePage(article) {
     this.newsService.currentArticle = article;
     console.log("clicked!" + article);
-    //this.router.navigate(["/news-single"]);
+    this.router.navigate(["/news-full-page"]);
   }
 
   loadMoreNews(event) {
